@@ -47,21 +47,18 @@ handler.handleReqRes = (req, res) => {
             // return the final response
             res.writeHead(statusCode);
             res.end(payloadString);
+        });
+    req.on('data', (buffer) => {
+        realData += decoder.write(buffer);
+    });
 
+    req.on('end', () => {
+        realData += decoder.end();
 
-            req.on('data', (buffer) => {
-                realData += decoder.write(buffer);
-            });
-
-            req.on('end', () => {
-                realData += decoder.end();
-
-                console.log(realData);
-                // response handle
-                res.end('Hello world');
-            });
-
-        })
+        console.log(realData);
+        // response handle
+        res.end('Hello world');
+    });
 }
 
 

@@ -47,11 +47,7 @@ lib.create = (dir, fileName, data, cb) => {
 lib.read = (dir, fileName, cb) => {
     //read the file
     fs.readFile(`${lib.basedir}/${dir}/${fileName}.json`, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error reading the file:', err);
-        } else {
-            console.log('File contents:', JSON.parse(data));
-        };
+        cb(err, data)
     });
 };
 
@@ -95,15 +91,13 @@ lib.update = (dir, fileName, data, cb) => {
 lib.remove = (dir, fileName, cb) => {
     //read the file
     fs.unlink(`${lib.basedir}/${dir}/${fileName}.json`, (err) => {
-        if (err) {
-            console.error('Error deleting the file:', err);
+        if (!err) {
+            cb(false);
         } else {
-            console.log('File deleted successfully');
-        };
+            cb(`Error deleting file`);
+        }
     });
 };
-
-
 
 // module exports
 module.exports = lib;

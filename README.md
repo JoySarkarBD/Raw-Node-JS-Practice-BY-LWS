@@ -13,9 +13,9 @@ Please follow the below instructions to run this project in your machine:
 
         cd Raw-Node-JS-Practice-BY-LWS
 
-3. Switch to specific branch for example Lesson-2
+3. Switch to specific branch for example Lesson-3
 
-        git checkout Lesson-2
+        git checkout Lesson-3
 
 4. Install dev dependencies
     

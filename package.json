@@ -1,5 +1,5 @@
 {
-  "name": "Node.Js Project",
+  "name": "node-js-project",
   "version": "1.0.0",
   "description": "Raw Node.Js Project Uptime Monitoring API",
   "main": "index.js",

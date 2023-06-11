@@ -8,8 +8,8 @@
 // dependencies
 const { hash, parseJSON } = require('../../library/utils');
 const { create, read, update, remove } = require('./../../library/data');
-const tokenHandler = require('./tokenHandler')
-const path = require('path');
+const tokenHandler = require('./tokenHandler');
+
 
 // module scaffolding
 const handler = {};

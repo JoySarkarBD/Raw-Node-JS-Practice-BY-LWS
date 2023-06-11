@@ -12,12 +12,14 @@ environments.staging = {
     port: 3000,
     envName: "staging",
     secretKey: "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    maxChecks: 5
 }
 
 environments.production = {
     port: 3000,
     envName: "production",
     secretKey: "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    maxChecks: 5
 }
 
 // determine which one need to choose

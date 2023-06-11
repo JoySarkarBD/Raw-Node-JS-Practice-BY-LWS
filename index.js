@@ -9,7 +9,8 @@
 const http = require('http');
 const { handleReqRes } = require('./helpers/handleReqRes');
 const env = require("./helpers/environments");
-const { create, update, read, remove } = require('./library/data')
+const { create, update, read, remove } = require('./library/data');
+const { sendTwilioSms } = require('./helpers/notifications');
 
 // app obj - module scaffolding
 const app = {};
@@ -30,6 +31,11 @@ const app = {};
 
 // remove('test', 'newFile', (err) => {
 //     console.log(err);
+// });
+
+// send sms to user
+// sendTwilioSms('01911111111', 'Hello world', (err) => {
+//     console.log(`this is the error`, err);
 // });
 
 // handle Request Response

@@ -99,5 +99,20 @@ lib.remove = (dir, fileName, cb) => {
     });
 };
 
+// list all the items in a directory
+lib.list = (dir, cb) => {
+    fs.readdir(`${lib.basedir}/${dir}/`, (err, fileNames) => {
+        if (!err && fileName && fileName.length > 0) {
+            const trimmedFileNames = [];
+            fileNames.forEach(fileName => {
+                trimmedFileNames.push(fileName.replace('.json', ''));
+            });
+            cb(false, trimmedFileNames);
+        } else {
+            cb('Error reading directory.')
+        }
+    });
+}
+
 // module exports
 module.exports = lib;
